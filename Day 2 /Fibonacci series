@@ -1,0 +1,8 @@
+def fibo_series():
+    fibo=[0,1]
+    for i in range(0,a-2):
+        new=fibo[-1]+fibo[-2]
+        fibo.append(new)
+    return fibo
+a=int(input())
+print(fibo_series())
