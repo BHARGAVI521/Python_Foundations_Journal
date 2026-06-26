@@ -1,0 +1,16 @@
+#1.Take Total food charges from user
+food_price=float(input("Enter the charge for the food : "))
+#2.tip and tax percentage 
+Tip=0.18
+Tax=0.07
+#3.calculate tip,tax,grand total usind food charges,tax %and tip %
+tip_amt=food_price*Tip
+tax_amt=food_price*Tax
+Grand_total=tip_amt+tax_amt+food_price
+# 4.Bill printing
+print("------Bill Summary-------------------")
+print(f"Total Food charges :   {food_price :2f}")
+print(f"tip                :   {tip_amt:2f}")
+print(f"Tax                :   {tax_amt :2f}")
+print("--------------------------------------")
+print(f"gtand Total        :   {Grand_total :2f}")
