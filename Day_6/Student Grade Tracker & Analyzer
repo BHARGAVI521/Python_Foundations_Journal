@@ -1,0 +1,17 @@
+print("--- Classroom Grade Performance Analyzer  ---")
+grades = [88, 92, 71, 64, 95, 83, 78, 55,66,90]
+total_students = len(grades)
+highest_score = max(grades)
+lowest_score = min(grades)
+class_average = sum(grades) / total_students
+PASSING_MARKS = 75
+passing_count = 0
+for score in grades:
+    if score >= PASSING_MARKS:
+        passing_count += 1
+print(f"Total Students Evaluated: {total_students}")
+print(f"Class Average Score:      {class_average:.1f}%")
+print(f"Highest Scored Mark:      {highest_score}%")
+print(f"Lowest Scored Mark:       {lowest_score}%")
+print("-------------------------------------------------")
+print(f"Students Meeting Threshold ({PASSING_MARKS}%+): {passing_count}/{total_students}")
