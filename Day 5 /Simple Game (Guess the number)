@@ -1,0 +1,19 @@
+import random
+a=int(input("Guess the number : "))
+secret=random.randint(1,30)
+i=1
+while(i<5):
+    if a<0 or a>30:
+        print("out of the range")
+    elif a>secret:
+        print("low")
+    elif secret == a:
+        print("Got it")
+        break
+    else:
+        print("high")
+    i+=1
+    a=int(input("Guess the number : "))
+if secret != a :
+    print("Wrong,attempts completed")
+
