@@ -1,0 +1,23 @@
+print("---  Welcome to the Smart Store Inventory  ---")
+store_inventory = {
+    "apple": 1.20,
+    "banana": 0.50,
+    "milk": 2.99,
+    "bread": 2.49,
+    "coffee": 8.99,
+    "eggs": 3.49}
+search_item = input("Enter the item name you want to look up: ").strip().lower()
+# Safely check if the item exists in the dictionary
+if search_item in store_inventory:
+    price = store_inventory[search_item]
+    print(f" Result: The price of '{search_item}' is ${price:.2f}")
+else:
+    print(f"Sorry, '{search_item}' is currently out of stock.")
+print("-" * 45)
+# .values() extracts only the prices from our key-value pairs
+total_catalog_value = sum(store_inventory.values())
+total_items_count = len(store_inventory)
+print(f"📊 INVENTORY SUMMARY:")
+print(f"Total Unique Products: {total_items_count}")
+print(f"Total Value of Stock:  ${total_catalog_value:.2f}")
+print("-" * 45)
