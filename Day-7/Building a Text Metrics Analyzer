@@ -1,0 +1,23 @@
+print("--- 🧠 Smart Text Metrics Analyzer 🧠 ---")
+user_text = input("Enter a sentence or paragraph to analyze:\n")
+# Step 1: Calculate word count by splitting the string at spaces
+words_list = user_text.split()
+word_count = len(words_list)
+# Step 2: Initialize counters for characters and vowels
+character_count = 0
+vowel_count = 0
+vowels = "aeiouAEIOU"
+# Step 3: Iterate through every character in the text
+for char in user_text:
+    # Count characters that are not spaces
+    if char != " ":
+        character_count += 1
+    # Check if the character is a vowel using the 'in' operator
+    if char in vowels:
+        vowel_count += 1
+print("\n-----------------------------------------")
+print("📊 TEXT ANALYSIS REPORT:")
+print(f"Total Words:             {word_count}")
+print(f"Characters (no spaces):  {character_count}")
+print(f"Total Vowels Found:      {vowel_count}")
+print("-----------------------------------------"
