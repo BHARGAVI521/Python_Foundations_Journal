@@ -1,0 +1,27 @@
+FILE_NAME = "work_log.txt"
+print("--- 📂 Permanent Work Log & Journal 📂 ---")
+print("1. Add a new work log entry")
+print("2. View all past entries")
+choice = input("Select an option (1 or 2): ").strip()
+if choice == "1":
+    new_entry = input("\nWhat did you accomplish just now?\n> ")
+    current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    with open(FILE_NAME, "a") as file:
+        file.write(f"[{current_time}] {new_entry}\n")
+    print("✅ Log saved successfully to disk!")
+elif choice == "2":
+    print("\n📜 RETRIEVING PAST WORK LOGS:")
+    print("-" * 45)
+    try:
+        with open(FILE_NAME, "r") as file:
+            content = file.read()
+            if content.strip() == "":
+                print("The log file is currently empty.")
+            else:
+                print(content)
+    except FileNotFoundError:
+        print(" No history found. Create your first entry to generate the file!")
+    print("-" * 45)
+
+else:
+    print("Invalid option. Please restart the utility.")
