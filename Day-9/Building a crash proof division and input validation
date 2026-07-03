@@ -1,0 +1,15 @@
+print("---  Robust Division & Input Validator  ---")
+try:
+    numerator = float(input("Enter the number to divide (Numerator): "))
+    denominator = float(input("Enter the number to divide by (Denominator): "))
+    result = numerator / denominator
+except ValueError:
+    print("\n Input Error: Please enter valid numeric digits only. Text is not allowed.")
+except ZeroDivisionError:
+    print("\n Math Error: Cannot divide by zero! The universe doesn't allow it.")
+else:
+    print("\n Calculation Successful!")
+    print(f"Result: {numerator} ÷ {denominator} = {result:.4f}")
+finally:
+    print("---------------------------------------------")
+    print("Thank you for using the Secure Validator Tool.")
