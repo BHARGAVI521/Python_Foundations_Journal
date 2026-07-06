@@ -1,0 +1,17 @@
+print("---  Smart E-commerce Catalog Updater  ---")
+# Step 1: Original product prices in stock
+original_prices = [15.50, 99.00, 45.00, 120.00, 85.00, 250.00, 12.99]
+# Step 2: Traditional way (Using a standard for loop for comparison)
+# hiked_prices_old = []
+# for price in original_prices:
+#     hiked_prices_old.append(price * 1.10)
+# Step 3: The Pythonic Way - List Comprehension to apply a 10% increase
+hiked_prices = [round(price * 1.10, 2) for price in original_prices]
+# Step 4: List Comprehension with a Condition to filter Premium items (>$100)
+premium_products = [price for price in hiked_prices if price > 100.00]
+# Display the data analysis
+print(f"Original Price List: {original_prices}")
+print("-" * 50)
+print(f"Updated Prices (+10%):  {hiked_prices}")
+print(f"Premium Tier Products:  {premium_products}")
+print("-" * 50)
