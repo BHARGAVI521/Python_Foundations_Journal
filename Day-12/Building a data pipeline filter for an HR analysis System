@@ -1,0 +1,19 @@
+print("---  HR Analytics Salary Processor  ---")
+
+# Raw employee base salaries
+base_salaries = [45000, 72000, 58000, 90000, 65000, 115000, 48000]
+
+# Step 1: Use filter() and a lambda function to extract senior salaries (>= 70,000)
+# The lambda checks a condition and returns True or False
+senior_salaries = list(filter(lambda x: x >= 70000, base_salaries))
+
+# Step 2: Use map() and a lambda function to add a $5,000 bonus to all salaries
+# The lambda modifies each value directly
+updated_salaries = list(map(lambda x: x + 5000, base_salaries))
+
+# Display the data pipeline results
+print(f"Original Payroll Database:  {base_salaries}")
+print("-" * 55)
+print(f"High-Earner Salaries (>=70k): {senior_salaries}")
+print(f"Updated Payroll (+5k Bonus): {updated_salaries}")
+print("-" * 55)
