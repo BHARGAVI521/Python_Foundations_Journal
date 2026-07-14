@@ -1,0 +1,36 @@
+# Day 14: App Profile State Saver using the JSON Module
+import json
+FILE_NAME = "profile.json"
+print("--- ⚙️ App User Profile State Manager ⚙️ ---")
+# Step 1: Create a complex, structured Python dictionary
+user_profile = {
+    "username": "coder_pythonista",
+    "streak_days": 14,
+    "is_active_premium": True,
+    "skills_learned": ["Variables", "Loops", "Functions", "Sets", "JSON"],
+    "preferences": {
+        "theme": "dark_mode",
+        "notifications_enabled": True
+    }
+}
+# Step 2: Serialization - Convert Python Dict to a JSON File
+# 'indent=4' makes the resulting text file human-readable and clean
+print("Saving profile state to disk...")
+with open(FILE_NAME, "w") as file:
+    json.dump(user_profile, file, indent=4)
+print(" State saved successfully as 'profile.json'!")
+print("-" * 50)
+# Step 3: Deserialization - Read JSON back into a Python Object
+print("Reading configuration back from disk...")
+try:
+    with open(FILE_NAME, "r") as file:
+        loaded_data = json.load(file)
+    # Verify we successfully read it back by accessing data keys
+    print("Configuration loaded successfully!")
+    print(f"User:       {loaded_data['username']}")
+    print(f"Current Streak: {loaded_data['streak_days']} days 🔥")
+    print(f"UI Preference:  {loaded_data['preferences']['theme']}")
+except FileNotFoundError:
+    print("❌ Error: Could not find configuration file.")
+
+print("-" * 50)
