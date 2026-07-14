@@ -1,0 +1,23 @@
+print("--- 🧼 CRM Marketing Data De-duplicator 🧼 ---")
+# Step 1: Raw subscriber list containing accidental duplicates
+raw_subscribers = [
+    "alex@email.com", "priya@email.com", "sam@email.com", 
+    "alex@email.com", "john@email.com", "priya@email.com"
+]
+# Step 2: Use a set to automatically eliminate duplicates
+clean_subscribers = set(raw_subscribers)
+# Step 3: Define a set of users who explicitly unsubscribed
+unsubscribed_users = {"sam@email.com", "mark@email.com"}
+# Step 4: Find active leads (Subscribed users MINUS unsubscribed users)
+# The '-' operator finds the set difference
+active_marketing_leads = clean_subscribers - unsubscribed_users
+# Step 5: Find overlapping users (Who is in both lists?)
+# The '&' operator finds the intersection
+flagged_for_removal = clean_subscribers & unsubscribed_users
+# Display the auditing report
+print(f"Raw Emails Received:     {len(raw_subscribers)}")
+print(f"Unique Subscribers:      {clean_subscribers}")
+print("-" * 55)
+print(f"Active Leads to Email:   {active_marketing_leads}")
+print(f"Flagged (Unsubscribed):  {flagged_for_removal}")
+print("-" * 55
