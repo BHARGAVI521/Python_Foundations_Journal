@@ -1,0 +1,43 @@
+Day 15: Bank Account Simulator using Object-Oriented Programming (OOP)
+# Step 1: Define the blueprint (Class)
+class BankAccount:
+    # The constructor method initializes the attributes of the object
+    def _init_(self, account_holder, initial_balance=0.0):
+        self.holder = account_holder
+        self.balance = initial_balance
+    # Method to deposit money
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print(f"💰 Deposited: ${amount:.2f}")
+        else:
+            print("❌ Invalid deposit amount.")
+    # Method to withdraw money with a security check
+    def withdraw(self, amount):
+        if amount > self.balance:
+            print(f"❌ Transaction Denied: Insufficient funds to withdraw ${amount:.2f}!")
+        elif amount <= 0:
+            print("❌ Invalid withdrawal amount.")
+        else:
+            self.balance -= amount
+            print(f"💸 Withdrew: ${amount:.2f}")
+    # Method to display current status
+    def display_balance(self):
+        print(f"👤 Account Holder: {self.holder}")
+        print(f"💳 Current Balance: ${self.balance:.2f}")
+# --- Main Program Execution (Creating and using the object) ---
+print("--- 🏦 OOP Bank Account System 🏦 ---\n")
+# Step 2: Instantiate an object from our Class
+my_account = BankAccount("Priya", 500.00)
+# Step 3: Interact with the object using its methods
+my_account.display_balance()
+print("-" * 40)
+my_account.deposit(150.50)
+my_account.withdraw(100.00)
+print("-" * 40)
+# Attempting an illegal withdrawal to test our safety check
+my_account.withdraw(600.00)
+print("-" * 40)
+
+# Final balance update
+my_account.display_balance()
